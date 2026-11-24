@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="logo" href="#">DM</a>
+    <nav class="menu">
+      <button type="button" class="nav-btn active" data-page="shop" onclick="showPage('shop')">Магазин</button>
+      <button type="button" class="nav-btn" data-page="favorites" onclick="showPage('favorites')">Избранное <span id="fav-count" class="badge">0</span></button>
+      <button type="button" class="nav-btn" data-page="cart" onclick="showPage('cart')">Корзина <span id="cart-count" class="badge">0</span></button>
+      <button type="button" class="nav-btn" data-page="profile" onclick="showPage('profile')">Профиль</button>
+      <button type="button" class="nav-btn admin-link hide" data-page="admin" onclick="showPage('admin')">Админка</button>
+    </nav>
+  </header>
+
+  <main>
+    <div id="notice" class="notice hide"></div>
+
+    <section id="page-shop" class="page">
+      <div class="head">
+        <div>
+          <p class="label">КАТАЛОГ</p>
+          <h1>Предметы</h1>
+          <p id="catalog-status" class="muted">Загружаю предметы игры…</p>
+        </div>
+        <div class="tools">
+          <input id="search" type="search" placeholder="Найти предмет..." aria-label="Поиск предметов">
+          <select id="category">
+            <option value="all">Все предметы</option>
+            <option value="Спирит">Спирит</option>
+            <option value="Ган">Ган</option>
+            <option value="Живучесть">Живучесть</option>
+          </select>
+        </div>
+      </div>
+      <div id="items" class="cards"></div>
+    </section>
+
+    <section id="page-favorites" class="page hide">
+      <div class="head"><div><p class="label">СОХРАНЁННОЕ</p><h1>Избранное</h1></div></div>
+      <div id="favorites" class="cards"></div>
+    </section>
+
+    <section id="page-cart" class="page hide">
+      <div class="head"><div><p class="label">ПОКУПКИ</p><h1>Корзина</h1></div></div>
+      <div id="cart"></div>
+    </section>
+
+    <section id="page-profile" class="page hide">
+      <div class="head"><div><p class="label">АККАУНТ</p><h1>Профиль</h1></div></div>
+      <div id="profile" class="box"></div>
+    </section>
+
+    <section id="page-admin" class="page hide">
+      <div class="head"><div><p class="label">УПРАВЛЕНИЕ</p><h1>Админка</h1></div></div>
+      <div id="admin"></div>
+    </section>
+  </main>
+
+  <div id="easter-text" class="easter-text">bebop is coming...</div>
+  <script src="script.js"></script>
+</body>
+</html>
